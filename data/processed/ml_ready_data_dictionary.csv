@@ -1,0 +1,11 @@
+column,description,how_it_was_built
+education,Applicant is a graduate (1 = graduate),Binary label encoding
+property_area_Semiurban,Property is in a semi-urban area (reference: Rural),One-hot encoding
+property_area_Urban,Property is in an urban area (reference: Rural),One-hot encoding
+credit_history_Fails,Credit history does not meet guidelines (reference: Meets),One-hot encoding
+credit_history_Unknown,Credit history is missing (reference: Meets),"Missing values kept as their own category, one-hot encoding"
+emi_to_income,Monthly instalment as a share of total income,"Engineered: (loan_amount x 1000 / term) / total income, capped, StandardScaler"
+log_total_income,"Total income, log scale","log(1 + total income), capped, StandardScaler"
+log_loan_amount,"Loan amount (thousands), log scale","Missing filled with the median, log(1 + amount), capped, StandardScaler"
+loan_approved,TARGET: loan approved (1) or rejected (0),Label encoding of Loan_Status
+split,Which part of the data the row belongs to,"'train' (80%) or 'holdout' (20%), stratified on the target"

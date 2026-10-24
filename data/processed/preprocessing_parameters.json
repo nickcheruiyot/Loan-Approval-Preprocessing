@@ -1,0 +1,116 @@
+{
+  "random_state": 42,
+  "split": {
+    "train_rows": 491,
+    "holdout_rows": 123
+  },
+  "imputation_values": {
+    "gender": "Male",
+    "married": "Yes",
+    "self_employed": "No",
+    "dependents": 0,
+    "loan_amount_k": 128.0,
+    "loan_term_months": 360,
+    "credit_history": "Unknown"
+  },
+  "outlier_caps_iqr_1.5": {
+    "log_applicant_income": [
+      6.932045800497843,
+      9.71290964262138
+    ],
+    "log_coapplicant_income": [
+      -11.572673319560167,
+      19.287788865933614
+    ],
+    "log_total_income": [
+      7.449708946740289,
+      9.817377025258837
+    ],
+    "log_loan_amount": [
+      3.8821349801220975,
+      5.849899473297212
+    ],
+    "log_income_per_person": [
+      6.083292817604584,
+      9.741973595615324
+    ],
+    "emi_to_income": [
+      0.016938681584279407,
+      0.11976163811394669
+    ]
+  },
+  "scaler": {
+    "type": "StandardScaler",
+    "features": [
+      "log_applicant_income",
+      "log_coapplicant_income",
+      "log_total_income",
+      "log_loan_amount",
+      "log_income_per_person",
+      "emi_to_income",
+      "loan_term_months",
+      "household_size",
+      "dependents"
+    ],
+    "mean": [
+      8.349547389273663,
+      4.214069450744237,
+      8.660652971344588,
+      4.87041112603109,
+      7.939550688079035,
+      0.06916865082068031,
+      341.74338085539716,
+      2.405295315682281,
+      0.7494908350305499
+    ],
+    "scale": [
+      0.5654932547532744,
+      3.8739117718988347,
+      0.4875453812759962,
+      0.4334639627681984,
+      0.6963618256315374,
+      0.022296290974816613,
+      65.04160764484553,
+      1.2460497518445015,
+      1.0012084070541567
+    ]
+  },
+  "encoding": {
+    "binary": {
+      "gender": {
+        "Female": 0,
+        "Male": 1
+      },
+      "married": {
+        "No": 0,
+        "Yes": 1
+      },
+      "education": {
+        "Not Graduate": 0,
+        "Graduate": 1
+      },
+      "self_employed": {
+        "No": 0,
+        "Yes": 1
+      }
+    },
+    "one_hot_reference": {
+      "property_area": "Rural",
+      "credit_history": "Meets"
+    },
+    "target": {
+      "N": 0,
+      "Y": 1
+    }
+  },
+  "final_features": [
+    "education",
+    "property_area_Semiurban",
+    "property_area_Urban",
+    "credit_history_Fails",
+    "credit_history_Unknown",
+    "emi_to_income",
+    "log_total_income",
+    "log_loan_amount"
+  ]
+}
